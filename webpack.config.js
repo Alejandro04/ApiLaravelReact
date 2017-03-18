@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './app/components/index.jsx',
+  entry: './front/index.jsx',
   output: {
     path: './public/',
     filename: "build.js",
