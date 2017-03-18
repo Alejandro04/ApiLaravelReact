@@ -8,7 +8,7 @@ class ListaNotas extends React.Component {
   }
 
   componentWillMount() {
-    fetch('/notas')
+    fetch('http://localhost:8000/notas')
       .then((response) => {
         return response.json()
       })
@@ -28,7 +28,6 @@ class ListaNotas extends React.Component {
       return <p className="text-center">Cargando notas...</p>
     }
   }
-
 }
 
 export default ListaNotas

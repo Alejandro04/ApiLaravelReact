@@ -21579,7 +21579,7 @@
 	    value: function componentWillMount() {
 	      var _this2 = this;
 
-	      fetch('/notas').then(function (response) {
+	      fetch('http://localhost:8000/notas').then(function (response) {
 	        return response.json();
 	      }).then(function (notas) {
 	        _this2.setState({ notas: notas });
