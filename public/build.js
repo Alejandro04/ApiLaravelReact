@@ -21565,10 +21565,10 @@
 	var ListaNotas = function (_React$Component) {
 	  _inherits(ListaNotas, _React$Component);
 
-	  function ListaNotas(props) {
+	  function ListaNotas() {
 	    _classCallCheck(this, ListaNotas);
 
-	    var _this = _possibleConstructorReturn(this, (ListaNotas.__proto__ || Object.getPrototypeOf(ListaNotas)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (ListaNotas.__proto__ || Object.getPrototypeOf(ListaNotas)).call(this));
 
 	    _this.state = { notas: [] };
 	    return _this;
@@ -21588,6 +21588,7 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      console.log(this.state.notas); //Se trae el estado inicial (por eso rebota) y luego el estado actualizado
 	      if (this.state.notas.length > 0) {
 	        return _react2.default.createElement(
 	          'div',

@@ -2,8 +2,8 @@ import React from 'react'
 
 class ListaNotas extends React.Component {
 
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = { notas: [] }
   }
 
@@ -13,11 +13,12 @@ class ListaNotas extends React.Component {
         return response.json()
       })
       .then((notas) => {
-        this.setState({ notas: notas })
+        this.setState({notas: notas})
       })
   }
 
   render() {
+    console.log(this.state.notas); //Se trae el estado inicial (por eso rebota) y luego el estado actualizado
     if (this.state.notas.length > 0) {
       return (
         <div className="container-fluid">
