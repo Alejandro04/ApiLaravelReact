@@ -21585,49 +21585,33 @@
 	  }
 
 	  _createClass(ListaNotas, [{
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this2 = this;
 
-	      _jquery2.default.ajax({
-	        url: 'http://localhost:8000/notas',
-	        dataType: 'json',
-	        type: 'GET',
-	        success: function (data) {
-	          this.setState({ notas: data });
-	        }.bind(this),
-	        error: function (xhr, status, err) {
-	          console.error('error');
-	        }.bind(this)
-	      });
+	      // Remove the 'www.' to cause a CORS error (and see the error state)
+	      _axios2.default.get('http://localhost:8000/notas').then(function (res) {
+	        // Transform the raw data by extracting the nested posts
+	        var nota = res.data.notas[0].nota;
+	        console.log(res.data.notas);
 
-	      /*
-	        axios.get('http://localhost:8000/notas')
-	        .then(function (response) {
-	            const notas = response.data.notas
-	            this.setState({notas: notas});
-	        })
-	        .catch(function (error) {
-	          console.log(error);
+	        // Update state to trigger a re-render.
+	        // Clear any errors, and turn off the loading indiciator.
+	        _this2.setState({
+	          notas: nota
 	        });
-	        */
-
-	      /*
-	        fetch('http://localhost:8000/notas')
-	          .then((response) => {
-	            return response.json()
-	          })
-	          .then((notas) => {
-	           if(notas != null)
-	           {
-	              this.setState({notas: notas})
-	           }
-	          })
-	            */
+	      }).catch(function (err) {
+	        // Something went wrong. Save the error in state and re-render.
+	        console.log(err);
+	        _this2.setState({
+	          notas: 'error'
+	        });
+	      });
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      console.log(this.state.notas); //Se trae el estado inicial (por eso rebota) y luego el estado actualizado
+	      //  console.log(this.state.notas); //Se trae el estado inicial (por eso rebota) y luego el estado actualizado
 	      if (this.state.notas.length > 0) {
 	        return _react2.default.createElement(
 	          'div',

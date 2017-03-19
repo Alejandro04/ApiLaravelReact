@@ -11,51 +11,27 @@ class ListaNotas extends React.Component {
       }
   }
 
-  componentWillMount() {
-
-
-  $.ajax({
-      url: 'http://localhost:8000/notas',
-      dataType: 'json',
-      type: 'GET',
-      success: function(data) {
-        this.setState({notas: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error('error');
-      }.bind(this)
-   });
-
-/*
+  componentDidMount() {
   axios.get('http://localhost:8000/notas')
-  .then(function (response) {
-      const notas = response.data.notas
-      this.setState({notas: notas});
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-  */
+    .then(res => {
+      // Transform the raw data by extracting the nested posts
+      const nota = res.data.notas[0].nota
+      console.log(res.data.notas)
 
-
-  /*
-    fetch('http://localhost:8000/notas')
-      .then((response) => {
-        return response.json()
-      })
-      .then((notas) => {
-       if(notas != null)
-       {
-          this.setState({notas: notas})
-       }
-      })
-        */
-
-  }
-
+      this.setState({
+        notas:nota
+      });
+    })
+    .catch(err => {
+      console.log(err)
+      this.setState({
+        notas: 'error'
+      });
+    });
+}
 
   render() {
-    console.log(this.state.notas); //Se trae el estado inicial (por eso rebota) y luego el estado actualizado
+  //  console.log(this.state.notas); //Se trae el estado inicial (por eso rebota) y luego el estado actualizado
     if (this.state.notas.length > 0) {
       return (
         <div className="container-fluid">
