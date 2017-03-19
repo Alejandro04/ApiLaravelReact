@@ -27,7 +27,6 @@ class ListaNotas extends React.Component {
    });
 
 /*
-
   axios.get('http://localhost:8000/notas')
   .then(function (response) {
       const notas = response.data.notas
@@ -36,7 +35,6 @@ class ListaNotas extends React.Component {
   .catch(function (error) {
     console.log(error);
   });
-
   */
 
 

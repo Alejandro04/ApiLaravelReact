@@ -21601,7 +21601,6 @@
 	      });
 
 	      /*
-	      
 	        axios.get('http://localhost:8000/notas')
 	        .then(function (response) {
 	            const notas = response.data.notas
@@ -21610,7 +21609,6 @@
 	        .catch(function (error) {
 	          console.log(error);
 	        });
-	      
 	        */
 
 	      /*
