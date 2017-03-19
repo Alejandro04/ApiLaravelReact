@@ -8,6 +8,8 @@
     "start": "webpack-dev-server --progress --colors"
   },
   "dependencies": {
+    "axios": "^0.15.3",
+    "jquery": "^3.2.0",
     "mysql": "^2.13.0",
     "react-router": "^4.0.0",
     "restify": "^4.3.0"
