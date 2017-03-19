@@ -21589,19 +21589,14 @@
 	    value: function componentDidMount() {
 	      var _this2 = this;
 
-	      // Remove the 'www.' to cause a CORS error (and see the error state)
 	      _axios2.default.get('http://localhost:8000/notas').then(function (res) {
 	        // Transform the raw data by extracting the nested posts
-	        var nota = res.data.notas[0].nota;
-	        console.log(res.data.notas);
+	        var nota = res.data.notas;
 
-	        // Update state to trigger a re-render.
-	        // Clear any errors, and turn off the loading indiciator.
 	        _this2.setState({
 	          notas: nota
 	        });
 	      }).catch(function (err) {
-	        // Something went wrong. Save the error in state and re-render.
 	        console.log(err);
 	        _this2.setState({
 	          notas: 'error'
@@ -21611,19 +21606,28 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      //  console.log(this.state.notas); //Se trae el estado inicial (por eso rebota) y luego el estado actualizado
-	      if (this.state.notas.length > 0) {
-	        return _react2.default.createElement(
-	          'div',
-	          { className: 'container-fluid' },
-	          _react2.default.createElement(ListaNotas, { listado: this.state.notas })
-	        );
-	      } else {
+	      if (this.state.notas == "") {
+
 	        return _react2.default.createElement(
 	          'p',
-	          { className: 'text-center' },
-	          'Cargando notas...'
+	          null,
+	          'error en render'
 	        );
+	      } else {
+
+	        var x = this.state.notas.length;
+	        console.log(x);
+	        for (var i = 0; i < x; i++) {
+	          return _react2.default.createElement(
+	            'ul',
+	            null,
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              this.state.notas[i].nota
+	            )
+	          );
+	        }
 	      }
 	    }
 	  }]);

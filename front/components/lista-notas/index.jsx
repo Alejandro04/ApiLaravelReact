@@ -15,8 +15,7 @@ class ListaNotas extends React.Component {
   axios.get('http://localhost:8000/notas')
     .then(res => {
       // Transform the raw data by extracting the nested posts
-      const nota = res.data.notas[0].nota
-      console.log(res.data.notas)
+      const nota = res.data.notas
 
       this.setState({
         notas:nota
@@ -31,15 +30,24 @@ class ListaNotas extends React.Component {
 }
 
   render() {
-  //  console.log(this.state.notas); //Se trae el estado inicial (por eso rebota) y luego el estado actualizado
-    if (this.state.notas.length > 0) {
-      return (
-        <div className="container-fluid">
-          <ListaNotas listado={this.state.notas} />
-        </div>
-      )
+    if (this.state.notas == "") {
+
+    return (
+        <p>error en render</p>
+    )
+
     } else {
-      return <p className="text-center">Cargando notas...</p>
+
+        var x = this.state.notas.length
+        console.log(x)
+        for(var i = 0; i < x; i++)
+        {
+            return (
+                <ul>
+                  <li>{ this.state.notas[i].nota }</li>
+                </ul>
+            )
+        }
     }
   }
 }
