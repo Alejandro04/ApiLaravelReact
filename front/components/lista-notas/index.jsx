@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios';
-import $ from 'jquery';
 
 class ListaNotas extends React.Component {
 
@@ -22,9 +21,6 @@ class ListaNotas extends React.Component {
     })
     .catch(err => {
       console.log(err)
-      this.setState({
-        notas: 'error'
-      });
     });
 }
 
@@ -32,7 +28,7 @@ class ListaNotas extends React.Component {
     if (this.state.notas == "") {
 
     return (
-        <p>error en render</p>
+        <p>error</p>
     )
 
     } else {
