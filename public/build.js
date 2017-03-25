@@ -21590,7 +21590,6 @@
 	      var _this2 = this;
 
 	      _axios2.default.get('http://localhost:8000/notas').then(function (res) {
-	        // Transform the raw data by extracting the nested posts
 	        var nota = res.data.notas;
 
 	        _this2.setState({
@@ -21615,19 +21614,23 @@
 	        );
 	      } else {
 
-	        var x = this.state.notas.length;
-	        console.log(x);
-	        for (var i = 0; i < x; i++) {
+	        var Items = this.state.notas.map(function (Item, i) {
 	          return _react2.default.createElement(
+	            'li',
+	            { key: i },
+	            Item.nota
+	          );
+	        });
+
+	        return _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
 	            'ul',
 	            null,
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              this.state.notas[i].nota
-	            )
-	          );
-	        }
+	            Items
+	          )
+	        );
 	      }
 	    }
 	  }]);

@@ -14,7 +14,6 @@ class ListaNotas extends React.Component {
   componentDidMount() {
   axios.get('http://localhost:8000/notas')
     .then(res => {
-      // Transform the raw data by extracting the nested posts
       let nota = res.data.notas
 
       this.setState({
@@ -38,16 +37,13 @@ class ListaNotas extends React.Component {
 
     } else {
 
-        let x = this.state.notas.length
-        console.log(x)
-        for(let i = 0; i < x; i++)
-        {
-            return (
-                <ul>
-                  <li>{ this.state.notas[i].nota }</li>
-                </ul>
-            )
-        }
+        let Items = this.state.notas.map((Item, i) =>
+          <li key={i}>
+            {Item.nota}
+          </li>
+          );
+
+         return <div><ul>{Items}</ul></div>
     }
   }
 }
