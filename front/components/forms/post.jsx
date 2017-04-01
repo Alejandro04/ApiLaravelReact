@@ -33,7 +33,7 @@ class PostForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Name:
+          Nota:
           <input type="text" name="nota" id="nota" onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />

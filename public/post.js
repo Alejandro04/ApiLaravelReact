@@ -21612,7 +21612,7 @@
 	        _react2.default.createElement(
 	          'label',
 	          null,
-	          'Name:',
+	          'Nota:',
 	          _react2.default.createElement('input', { type: 'text', name: 'nota', id: 'nota', onChange: this.handleChange })
 	        ),
 	        _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
