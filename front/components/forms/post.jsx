@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+import $ from 'jquery'
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -15,8 +16,17 @@ class PostForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
+      event.preventDefault();
+      let nota = $("#nota").val()
+      axios.post('http://localhost:8000/notas', {
+          nota: nota,
+       })
+       .then(function (response) {
+         console.log(response);
+       })
+       .catch(function (error) {
+         console.log(error);
+       });
   }
 
   render() {
@@ -24,7 +34,7 @@ class PostForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="nota" id="nota" onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>

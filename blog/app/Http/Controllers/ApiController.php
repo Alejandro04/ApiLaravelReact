@@ -15,8 +15,19 @@ class ApiController extends Controller
       return response()->json(['notas' => $notas]);
     }
 
-    public function store()
+    public function store(Request $request)
     {
-      return response()->json(['key' => 'value']);
+      return $request->firstName;
+      /*
+      Nota::create([
+             'user_id' => $user->id,
+             'sucursal_id' =>$request['sucursal_id'],
+             'cedula' => $request['cedula'],
+             'nombre' => $request['nombre'],
+             'apellido' => $request['apellido'],
+             'telefono' => $request['telefono'],
+             'direccion' => $request['direccion'],
+         ]);
+         */
     }
 }
