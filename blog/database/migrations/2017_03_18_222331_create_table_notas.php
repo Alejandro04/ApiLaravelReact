@@ -15,6 +15,7 @@ class CreateTableNotas extends Migration
       Schema::create('notas', function (Blueprint $table) {
           $table->increments('id');
           $table->string('nota');
+          $table->timestamps();
       });
     }
 

@@ -17,17 +17,12 @@ class ApiController extends Controller
 
     public function store(Request $request)
     {
-      return $request->nota;
-      /*
-      Nota::create([
-             'user_id' => $user->id,
-             'sucursal_id' =>$request['sucursal_id'],
-             'cedula' => $request['cedula'],
-             'nombre' => $request['nombre'],
-             'apellido' => $request['apellido'],
-             'telefono' => $request['telefono'],
-             'direccion' => $request['direccion'],
+
+        Nota::create([
+             'nota' => $request->nota
          ]);
-         */
+
+       return response()->json(['notas' => $request->nota]);
+
     }
 }

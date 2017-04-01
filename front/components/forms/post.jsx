@@ -16,18 +16,17 @@ class PostForm extends React.Component {
   }
 
   handleSubmit(event) {
-      event.preventDefault();
-      let nota = $("#nota").val()
-      alert(nota)
-      axios.post('http://localhost:8000/notas', {
-          nota: nota,
-       })
-       .then(function (response) {
-         console.log(response);
-       })
-       .catch(function (error) {
-         console.log(error);
-       });
+    event.preventDefault();
+    let nota = $("#nota").val()
+     axios.post('http://localhost:8000/notas', {
+       nota: nota,
+     })
+     .then(function (response) {
+       console.log(response);
+     })
+     .catch(function (error) {
+       console.log(error);
+     });
   }
 
   render() {
