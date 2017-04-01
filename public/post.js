@@ -21595,6 +21595,7 @@
 	    value: function handleSubmit(event) {
 	      event.preventDefault();
 	      var nota = (0, _jquery2.default)("#nota").val();
+	      alert(nota);
 	      _axios2.default.post('http://localhost:8000/notas', {
 	        nota: nota
 	      }).then(function (response) {

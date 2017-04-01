@@ -17,7 +17,7 @@ class ApiController extends Controller
 
     public function store(Request $request)
     {
-      return $request->firstName;
+      return $request->nota;
       /*
       Nota::create([
              'user_id' => $user->id,
