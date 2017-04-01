@@ -2,7 +2,12 @@ module.exports = {
   entry: './front/index.jsx',
   output: {
     path: './public/',
-    filename: "build.js",
+    filename: "lista.js",
+  },
+  entry: './front/form.jsx',
+  output: {
+    path: './public/',
+    filename: "post.js",
   },
   module: {
     loaders: [
