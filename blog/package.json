@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp watch"
+    "build": "webpack -w",
+    "start": "webpack-dev-server --progress --colors"
   },
   "dependencies": {
     "axios": "^0.15.3",
