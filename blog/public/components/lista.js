@@ -25152,7 +25152,7 @@
 	              null,
 	              _react2.default.createElement(
 	                'a',
-	                { href: '#', className: 'btn btn-info' },
+	                { href: "/nota/" + Item.id, className: 'btn btn-info' },
 	                'Editar'
 	              )
 	            )

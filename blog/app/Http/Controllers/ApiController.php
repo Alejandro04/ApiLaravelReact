@@ -35,4 +35,9 @@ class ApiController extends Controller
     {
       return view('components.form');
     }
+
+    public function nota($id)
+    {
+      return $id;
+    }
 }

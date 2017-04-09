@@ -36,7 +36,7 @@ class ListaNotas extends React.Component {
         let Items = this.state.notas.map((Item, i) =>
           <tr key={i}>
             <td>{Item.nota}</td>
-            <td><a href='#' className='btn btn-info'>Editar</a></td>
+            <td><a href={"/nota/"+ Item.id} className='btn btn-info'>Editar</a></td>
           </tr>
           );
 

@@ -20,3 +20,4 @@ Route::post('/notas', 'ApiController@store');
 
 Route::get('/lista', 'ApiController@lista');
 Route::get('/form', 'ApiController@form');
+Route::get('/nota/{id}', 'ApiController@nota');
