@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ListaNotas from './components/lista-notas/index.jsx'
-
+import { BrowserRouter } from 'react-router-dom'
+import Root from './routes/routes/jsx'
 
 ReactDOM.render(
-        <ListaNotas/>,
-        document.getElementById('lista')
+        <Root/>,
+        document.getElementById('listas')
     );

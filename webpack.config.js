@@ -1,8 +1,8 @@
 module.exports = {
-  entry: './front/index.jsx',
+  entry: './front/routes/routes.jsx',
   output: {
     path: './public/',
-    filename: "lista.js",
+    filename: "route.js",
   },
   module: {
     loaders: [
