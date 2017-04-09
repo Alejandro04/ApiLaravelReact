@@ -21607,15 +21607,23 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'form',
-	        { onSubmit: this.handleSubmit },
+	        'div',
+	        { className: 'container' },
 	        _react2.default.createElement(
-	          'label',
+	          'h1',
 	          null,
-	          'Nota:',
-	          _react2.default.createElement('input', { type: 'text', name: 'nota', id: 'nota', onChange: this.handleChange })
+	          'Registrar Nota'
 	        ),
-	        _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
+	        _react2.default.createElement(
+	          'form',
+	          { onSubmit: this.handleSubmit },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            _react2.default.createElement('input', { type: 'text', name: 'nota', className: 'form-control', id: 'nota', onChange: this.handleChange, placeholder: 'Nota' })
+	          ),
+	          _react2.default.createElement('input', { type: 'submit', value: 'Registrar', className: 'btn btn-info' })
+	        )
 	      );
 	    }
 	  }]);

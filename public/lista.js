@@ -21609,17 +21609,48 @@
 
 	        var Items = this.state.notas.map(function (Item, i) {
 	          return _react2.default.createElement(
-	            'li',
+	            'tr',
 	            { key: i },
-	            Item.nota
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              Item.nota
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#', className: 'btn btn-info' },
+	                'Editar'
+	              )
+	            )
 	          );
 	        });
 
 	        return _react2.default.createElement(
-	          'div',
-	          null,
+	          'table',
+	          { className: 'table table-striped' },
 	          _react2.default.createElement(
-	            'ul',
+	            'thead',
+	            null,
+	            _react2.default.createElement(
+	              'tr',
+	              null,
+	              _react2.default.createElement(
+	                'th',
+	                null,
+	                'Nota'
+	              ),
+	              _react2.default.createElement(
+	                'th',
+	                null,
+	                'Accion'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tbody',
 	            null,
 	            Items
 	          )

@@ -31,13 +31,15 @@ class PostForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Nota:
-          <input type="text" name="nota" id="nota" onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div className="container">
+        <h1>Registrar Nota</h1>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            <input type="text" name="nota" className="form-control" id="nota" onChange={this.handleChange} placeholder="Nota" />
+          </label>
+          <input type="submit" value="Registrar" className="btn btn-info" />
+        </form>
+      </div>
     );
   }
 }

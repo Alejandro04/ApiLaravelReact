@@ -34,12 +34,23 @@ class ListaNotas extends React.Component {
     } else {
 
         let Items = this.state.notas.map((Item, i) =>
-          <li key={i}>
-            {Item.nota}
-          </li>
+          <tr key={i}>
+            <td>{Item.nota}</td>
+            <td><a href='#' className='btn btn-info'>Editar</a></td>
+          </tr>
           );
 
-         return <div><ul>{Items}</ul></div>
+         return <table className='table table-striped'>
+                 <thead>
+                    <tr>
+                      <th>Nota</th>
+                      <th>Accion</th>
+                    </tr>
+                  </thead>
+                 <tbody>
+                    {Items}
+                  </tbody>
+                 </table>
     }
   }
 }
