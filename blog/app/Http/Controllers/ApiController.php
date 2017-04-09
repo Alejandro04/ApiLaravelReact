@@ -25,4 +25,14 @@ class ApiController extends Controller
        return response()->json(['notas' => $request->nota]);
 
     }
+
+    public function lista()
+    {
+      return view('components.lista');
+    }
+
+    public function form()
+    {
+      return view('components.form');
+    }
 }

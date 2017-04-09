@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('/notas', 'ApiController@index');
 Route::post('/notas', 'ApiController@store');
+
+Route::get('/lista', 'ApiController@lista');
+Route::get('/form', 'ApiController@form');

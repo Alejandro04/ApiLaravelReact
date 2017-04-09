@@ -18,6 +18,6 @@
       <h1>Lista de Notas</h1>
       <div id="lista"></div>
     </div>
-    <script type="text/javascript" src="lista.js"></script>
+    <script type="text/javascript" src="components/lista.js"></script>
   </body>
 </html>

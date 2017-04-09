@@ -11,13 +11,9 @@
 
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
   </head>
   <body>
-    <div class="container">
-      <h1>Lista de Notas</h1>
-      <div id="lista"></div>
-    </div>
-    <script type="text/javascript" src="lista.js"></script>
+    <div id="post"></div>
+    <script type="text/javascript" src="components/post.js"></script>
   </body>
 </html>
