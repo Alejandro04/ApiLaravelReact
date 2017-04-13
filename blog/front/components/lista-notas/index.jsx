@@ -12,11 +12,6 @@ class ListaNotas extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
   }
 
-  handleSearch(event){
-    console.log(event.target.value)
-    this.setState({ notas: event.target.value });
-  }
-
   componentDidMount() {
   axios.get('http://localhost:8000/notas')
     .then(res => {
@@ -31,6 +26,11 @@ class ListaNotas extends React.Component {
     });
 }
 
+handleSearch(event){
+  console.log(event.target.value)
+  //this.setState({ notas: });
+}
+
   render() {
     if (this.state.notas == "") {
 
@@ -40,15 +40,15 @@ class ListaNotas extends React.Component {
 
     } else {
 
-        let Items = this.state.notas.map((Item, i) =>
-          <tr key={i}>
-            <td>{Item.nota}</td>
-            <td><a href={"/nota/"+ Item.id} className='btn btn-info'>Editar</a></td>
-          </tr>
-          );
+          let Items = this.state.notas.map((Item, i) =>
+                <tr key={i}>
+                    <td>{Item.nota}</td>
+                    <td><a href={"/nota/"+ Item.id} className='btn btn-info'>Editar</a></td>
+                </tr>
+            );
 
          return  <div>
-                   <input type="text" onChange={this.handleSearch} className='form-control' placeholder='Buscar Nota' />
+                   <input type="text" onChange={this.handleSearch}  className='form-control' placeholder='Buscar Nota' />
                    <table className='table table-striped'>
                    <thead>
                       <tr>

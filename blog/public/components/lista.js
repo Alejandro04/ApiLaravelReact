@@ -25114,12 +25114,6 @@
 	  }
 
 	  _createClass(ListaNotas, [{
-	    key: 'handleSearch',
-	    value: function handleSearch(event) {
-	      console.log(event.target.value);
-	      this.setState({ notas: event.target.value });
-	    }
-	  }, {
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      var _this2 = this;
@@ -25133,6 +25127,12 @@
 	      }).catch(function (err) {
 	        console.log(err);
 	      });
+	    }
+	  }, {
+	    key: 'handleSearch',
+	    value: function handleSearch(event) {
+	      console.log(event.target.value);
+	      //this.setState({ notas: });
 	    }
 	  }, {
 	    key: 'render',
