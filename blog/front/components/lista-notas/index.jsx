@@ -8,6 +8,13 @@ class ListaNotas extends React.Component {
      this.state = {
         notas: []
       }
+
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  handleSearch(event){
+    console.log(event.target.value)
+    this.setState({ notas: event.target.value });
   }
 
   componentDidMount() {
@@ -40,17 +47,20 @@ class ListaNotas extends React.Component {
           </tr>
           );
 
-         return <table className='table table-striped'>
-                 <thead>
-                    <tr>
-                      <th>Nota</th>
-                      <th>Accion</th>
-                    </tr>
-                  </thead>
-                 <tbody>
-                    {Items}
-                  </tbody>
-                 </table>
+         return  <div>
+                   <input type="text" onChange={this.handleSearch} className='form-control' placeholder='Buscar Nota' />
+                   <table className='table table-striped'>
+                   <thead>
+                      <tr>
+                        <th>Nota</th>
+                        <th>Accion</th>
+                      </tr>
+                    </thead>
+                   <tbody>
+                      {Items}
+                    </tbody>
+                   </table>
+                 </div>
     }
   }
 }

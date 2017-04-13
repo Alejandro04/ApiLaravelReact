@@ -25108,10 +25108,18 @@
 	    _this.state = {
 	      notas: []
 	    };
+
+	    _this.handleSearch = _this.handleSearch.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(ListaNotas, [{
+	    key: 'handleSearch',
+	    value: function handleSearch(event) {
+	      console.log(event.target.value);
+	      this.setState({ notas: event.target.value });
+	    }
+	  }, {
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      var _this2 = this;
@@ -25160,30 +25168,35 @@
 	        });
 
 	        return _react2.default.createElement(
-	          'table',
-	          { className: 'table table-striped' },
+	          'div',
+	          null,
+	          _react2.default.createElement('input', { type: 'text', onChange: this.handleSearch, className: 'form-control', placeholder: 'Buscar Nota' }),
 	          _react2.default.createElement(
-	            'thead',
-	            null,
+	            'table',
+	            { className: 'table table-striped' },
 	            _react2.default.createElement(
-	              'tr',
+	              'thead',
 	              null,
 	              _react2.default.createElement(
-	                'th',
+	                'tr',
 	                null,
-	                'Nota'
-	              ),
-	              _react2.default.createElement(
-	                'th',
-	                null,
-	                'Accion'
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Nota'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Accion'
+	                )
 	              )
+	            ),
+	            _react2.default.createElement(
+	              'tbody',
+	              null,
+	              Items
 	            )
-	          ),
-	          _react2.default.createElement(
-	            'tbody',
-	            null,
-	            Items
 	          )
 	        );
 	      }
